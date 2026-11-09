@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Pinterest Quick Start</title>
+<style>
+:root{--cream:#f7f2e9;--paper:#fffaf5;--ink:#171411;--muted:#71685f;--red:#971019;--line:#d9cec0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+.wrap{width:min(840px,92%);margin:auto;padding:70px 0}
+.card{background:var(--paper);border:1px solid var(--line);padding:42px;box-shadow:0 18px 60px rgba(69,36,23,.12)}
+.eyebrow{color:var(--red);font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-size:.75rem}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(2.8rem,7vw,5rem);line-height:.95;margin:.2em 0}
+h1 em{color:var(--red);font-weight:500}
+p{color:#403a34}
+.status{padding:15px 18px;background:#f0e8df;border-left:3px solid var(--red);margin:24px 0}
+.download{display:block;text-decoration:none;background:var(--red);color:#fff;padding:17px 20px;margin:12px 0;font-weight:800}
+.small{font-size:.86rem;color:var(--muted)}
+.error{color:var(--red);font-weight:700}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="card">
+    <div class="eyebrow">Pinterest Quick Start</div>
+    <h1>Payment received.<br><em>Your workbook is ready.</em></h1>
+    <p id="intro">We are securely verifying your Stripe payment before unlocking your download.</p>
+    <div id="status" class="status">Checking payment…</div>
+    <div id="downloads"></div>
+    <p class="small">Download links are temporary for security. If a link expires, reopen the original Stripe success link.</p>
+  </div>
+</main>
+
+<script src="config.js"></script>
+<script>
+(async function () {
+  const status = document.getElementById("status");
+  const downloads = document.getElementById("downloads");
+  const sessionId = new URLSearchParams(location.search).get("session_id");
+
+  if (!sessionId) {
+    status.innerHTML = '<span class="error">Missing Stripe session ID.</span>';
+    return;
+  }
+
+  try {
+    const url = `${window.PQS_CONFIG.WORKER_URL}/verify?session_id=${encodeURIComponent(sessionId)}`;
+    const res = await fetch(url, { method: "GET" });
+    const data = await res.json();
+
+    if (!res.ok) throw new Error(data.error || "Could not verify payment.");
+
+    if (data.status === "pending") {
+      status.textContent = "Your payment is still processing. Refresh this page in a moment.";
+      return;
+    }
+
+    status.textContent = "Verified ✓";
+    document.getElementById("intro").textContent =
+      data.email ? `Thank you. Your purchase is unlocked for ${data.email}.` : "Thank you. Your purchase is unlocked.";
+
+    (data.downloads || []).forEach(item => {
+      if (item.asset !== "quickstart") return;
+      const a = document.createElement("a");
+      a.className = "download";
+      a.href = item.url;
+      a.textContent = item.label || "Download Pinterest Quick Start";
+      downloads.appendChild(a);
+    });
+
+    if (!downloads.children.length) {
+      status.innerHTML = '<span class="error">Payment verified, but the Quick Start file was not matched. Contact support.</span>';
+    }
+  } catch (err) {
+    status.innerHTML = `<span class="error">${err.message}</span>`;
+  }
+})();
+</script>
+</body>
+</html>
