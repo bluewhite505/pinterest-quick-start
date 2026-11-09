@@ -268,6 +268,345 @@
       section{padding:58px 0}
       .not-course{padding:25px}
     }
+  
+    /* === MOBILE-FIRST CONVERSION POLISH === */
+    .inside-section{
+      padding:72px 0;
+      overflow:hidden;
+    }
+    .inside-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:64px;
+      align-items:center;
+    }
+    .inside-copy h2{
+      font-family:var(--serif);
+      font-size:clamp(2.8rem,5vw,4.8rem);
+      line-height:.94;
+      letter-spacing:-.035em;
+      margin:10px 0 18px;
+      font-weight:600;
+    }
+    .inside-copy h2 em{
+      color:var(--wine);
+      font-weight:500;
+    }
+    .inside-lead{
+      color:#4c443e;
+      max-width:580px;
+      font-size:1.03rem;
+      margin:0 0 22px;
+    }
+    .mobile-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:0 0 22px;
+    }
+    .mobile-proof span{
+      border:1px solid rgba(151,16,25,.22);
+      background:rgba(255,255,255,.56);
+      padding:7px 10px;
+      font-size:.72rem;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--wine);
+    }
+    .inside-features{
+      gap:10px;
+      margin:20px 0 24px;
+    }
+    .feature-card{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:13px 14px;
+      background:rgba(255,250,242,.74);
+      border:1px solid rgba(217,206,192,.95);
+    }
+    .feature-card strong{
+      display:block;
+      font-size:.93rem;
+      line-height:1.25;
+    }
+    .feature-card small{
+      display:block;
+      color:var(--muted);
+      font-size:.8rem;
+      line-height:1.4;
+      margin-top:3px;
+    }
+    .inside-cta{min-width:270px}
+    .inside-micro{
+      margin:9px 0 0;
+      color:var(--muted);
+      font-size:.76rem;
+    }
+    .mobile-sticky-cta{display:none}
+
+    @media (max-width:900px){
+      .inside-grid{
+        grid-template-columns:1fr;
+        gap:34px;
+      }
+      .inside-visual{
+        max-width:520px;
+        margin:0 auto;
+        width:100%;
+      }
+    }
+
+    @media (max-width:620px){
+      body{
+        padding-bottom:78px;
+        overflow-x:hidden;
+      }
+      .wrap{
+        width:calc(100% - 32px);
+        max-width:none;
+      }
+      .topbar{
+        padding:8px 12px;
+        font-size:.68rem;
+        line-height:1.35;
+        letter-spacing:.05em;
+      }
+      .nav{
+        padding:13px 0;
+      }
+      .brand{
+        font-size:1.05rem;
+      }
+
+      .hero{
+        padding:34px 0 48px;
+        gap:28px;
+      }
+      .hero h1{
+        font-size:clamp(3rem,15vw,4.35rem);
+        line-height:.88;
+        margin:12px 0 18px;
+      }
+      .hero .lead{
+        font-size:1rem;
+        line-height:1.5;
+        margin-bottom:18px;
+      }
+      .promise{
+        margin:18px 0 22px;
+        gap:8px;
+      }
+      .promise div{
+        padding:10px 0;
+        font-size:.72rem;
+      }
+      .price{
+        font-size:3.1rem;
+      }
+      .hero .btn,
+      .inside-cta,
+      .compare-card .btn,
+      .final .btn{
+        width:100%;
+        min-width:0;
+        padding:16px 18px;
+        font-size:.94rem;
+      }
+      .hero-card{
+        width:92%;
+        transform:rotate(.3deg);
+      }
+      .stamp{
+        width:78px;
+        height:78px;
+        right:-8px;
+        bottom:18px;
+        font-size:.62rem;
+      }
+
+      section{
+        padding:50px 0;
+      }
+      .section-head{
+        margin-bottom:28px;
+        text-align:left;
+      }
+      .section-head h2{
+        font-size:clamp(2.55rem,12vw,3.65rem);
+        line-height:.94;
+      }
+      .section-head p{
+        font-size:.95rem;
+      }
+
+      .not-course{
+        padding:20px;
+        gap:24px;
+      }
+      .not-course .big{
+        font-size:2.55rem;
+      }
+
+      .steps{
+        gap:10px;
+      }
+      .step{
+        min-height:0;
+        padding:18px 17px;
+      }
+      .step .num{
+        font-size:1.8rem;
+      }
+      .step h3{
+        font-size:1.35rem;
+      }
+
+      .inside-section{
+        padding:48px 0 54px;
+      }
+      .inside-grid{
+        display:flex;
+        flex-direction:column;
+        gap:30px;
+      }
+      .inside-visual{
+        order:2;
+        width:100%;
+      }
+      .inside-copy{
+        order:1;
+      }
+      .inside-copy .eyebrow{
+        font-size:.68rem;
+        letter-spacing:.18em;
+      }
+      .inside-copy h2{
+        font-size:clamp(2.8rem,13vw,3.8rem);
+        line-height:.91;
+        margin:9px 0 16px;
+      }
+      .inside-lead{
+        font-size:.96rem;
+        line-height:1.5;
+        margin-bottom:17px;
+      }
+      .mobile-proof{
+        gap:6px;
+        margin-bottom:17px;
+      }
+      .mobile-proof span{
+        font-size:.62rem;
+        padding:6px 8px;
+      }
+      .inside-features{
+        gap:8px;
+        margin:16px 0 20px;
+      }
+      .feature-card{
+        border-radius:10px;
+        padding:12px;
+        background:#fffaf5;
+        box-shadow:0 6px 18px rgba(69,36,23,.05);
+      }
+      .feature-card .tick{
+        width:22px;
+        height:22px;
+        flex-basis:22px;
+        font-size:.65rem;
+      }
+      .feature-card strong{
+        font-size:.9rem;
+      }
+      .feature-card small{
+        font-size:.77rem;
+      }
+      .inside-micro{
+        text-align:center;
+      }
+
+      .editorial-frame{
+        max-width:100%;
+        padding:10px;
+        box-shadow:0 16px 42px rgba(69,36,23,.13);
+      }
+      .editorial-frame:before{
+        inset:7px -8px -10px 9px;
+      }
+      .editorial-note{
+        left:22px;
+        right:-7px;
+        bottom:22px;
+        padding:11px 12px 10px;
+        border-left-width:4px;
+      }
+      .editorial-note span{
+        font-size:.54rem;
+        letter-spacing:.12em;
+      }
+      .editorial-note strong{
+        font-size:.82rem;
+      }
+
+      .audience-grid{
+        gap:10px;
+      }
+      .audience{
+        padding:19px;
+      }
+      .compare{
+        gap:14px;
+      }
+      .compare-card{
+        padding:22px 18px;
+      }
+
+      .final{
+        padding:58px 0 52px;
+      }
+      .final h2{
+        font-size:clamp(2.8rem,13vw,3.8rem);
+      }
+
+      .mobile-sticky-cta{
+        position:fixed;
+        z-index:9999;
+        left:10px;
+        right:10px;
+        bottom:10px;
+        min-height:58px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:16px;
+        text-decoration:none;
+        background:var(--wine);
+        color:#fff;
+        border-radius:14px;
+        padding:10px 15px;
+        box-shadow:0 12px 34px rgba(69,13,17,.34);
+      }
+      .mobile-sticky-cta span{
+        display:flex;
+        flex-direction:column;
+        line-height:1.15;
+      }
+      .mobile-sticky-cta strong{
+        font-size:.9rem;
+      }
+      .mobile-sticky-cta small{
+        margin-top:3px;
+        color:#f4d7d8;
+        font-size:.68rem;
+      }
+      .mobile-sticky-cta b{
+        white-space:nowrap;
+        font-family:var(--serif);
+        font-size:1.35rem;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -354,39 +693,48 @@
       </div>
     </section>
 
-    <section>
-      <div class="wrap preview">
-        <div class="preview-img editorial-preview">
+    
+    <section class="inside-section">
+      <div class="wrap inside-grid">
+        <div class="inside-visual">
           <div class="editorial-frame">
-            <img src="og-preview.png" alt="Pinterest Quick Start workbook mockup" class="editorial-cover" />
+            <img src="og-preview.png" alt="Pinterest Quick Start workbook preview" class="editorial-cover" />
             <div class="editorial-note">
               <span>8-PAGE INTERACTIVE WORKBOOK</span>
               <strong>Buyer Search • 10 Pin Angles • Pin Copy • Planner</strong>
             </div>
           </div>
         </div>
-        </div>
-          </div>
-        </div>
-        <div class="preview-copy">
+
+        <div class="inside-copy">
           <div class="eyebrow">Inside the $9 Quick Start</div>
           <h2>Small enough to finish.<br><em>Useful enough to use.</em></h2>
-          <p>
-            You are getting an 8-page interactive workbook built to get your first focused Pin batch planned — without giving away the worksheets before you buy.
+          <p class="inside-lead">
+            One focused workbook to turn one product + one buyer search into your first 10 Pinterest Pins.
           </p>
-          <div class="feature-list">
-            <div class="check"><span class="tick">✓</span><div><strong>Fillable product foundation</strong> — product, audience and promise.</div></div>
-            <div class="check"><span class="tick">✓</span><div><strong>Buyer-search worksheet</strong> — find the words your audience already uses.</div></div>
-            <div class="check"><span class="tick">✓</span><div><strong>10 Pin-angle builder</strong> — create variety without changing the product.</div></div>
-            <div class="check"><span class="tick">✓</span><div><strong>Pin-copy formula</strong> — title, description and CTA.</div></div>
-            <div class="check"><span class="tick">✓</span><div><strong>10-Pin planner</strong> — turn research into an actual publishing batch.</div></div>
+
+          <div class="mobile-proof">
+            <span>8 pages</span>
+            <span>Fillable</span>
+            <span>10-Pin plan</span>
           </div>
-          <a class="btn buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">Get Instant Access — $9 →</a>
+
+          <div class="feature-list inside-features">
+            <div class="feature-card"><span class="tick">✓</span><div><strong>Product foundation</strong><small>Clarify the product, audience and promise.</small></div></div>
+            <div class="feature-card"><span class="tick">✓</span><div><strong>Buyer-search worksheet</strong><small>Find the phrase your buyer is already searching.</small></div></div>
+            <div class="feature-card"><span class="tick">✓</span><div><strong>10 Pin-angle builder</strong><small>Turn one offer into 10 different Pin ideas.</small></div></div>
+            <div class="feature-card"><span class="tick">✓</span><div><strong>Pin-copy formula</strong><small>Write the title, description and CTA faster.</small></div></div>
+            <div class="feature-card"><span class="tick">✓</span><div><strong>10-Pin planner</strong><small>Map the batch so you can create instead of overthink.</small></div></div>
+          </div>
+
+          <a class="btn inside-cta buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">
+            Get Instant Access — $9 →
+          </a>
+          <p class="inside-micro">One-time payment • Instant digital access</p>
         </div>
       </div>
     </section>
-
-    <section class="for-you">
+<section class="for-you">
       <div class="wrap">
         <div class="section-head">
           <div class="eyebrow" style="color:#f3c8ca">Built for the beginner who wants momentum</div>
@@ -490,5 +838,11 @@
     </div>
   </footer>
 <script src="config.js"></script>
+
+  <a class="mobile-sticky-cta buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06" aria-label="Get Pinterest Quick Start for 9 dollars">
+    <span><strong>Get the Quick Start</strong><small>Instant access</small></span>
+    <b>$9 →</b>
+  </a>
+
 </body>
 </html>
