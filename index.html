@@ -276,7 +276,7 @@
   <header class="wrap">
     <div class="nav">
       <div class="brand">Pinterest Profit Girl</div>
-      <a class="nav-cta buy-link" href="#buy">Get the Quick Start — $9</a>
+      <a class="nav-cta buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">Get the Quick Start — $9</a>
     </div>
   </header>
 
@@ -298,7 +298,7 @@
           <div class="price">$9</div>
           <div class="price-note">one-time payment<br>instant PDF access</div>
         </div>
-        <a class="btn buy-link" href="#buy">Build My First 10 Pins →</a>
+        <a class="btn buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">Build My First 10 Pins →</a>
         <div class="micro">8-page interactive workbook · fillable fields · clickable next-step link</div>
       </div>
 
@@ -381,7 +381,7 @@
             <div class="check"><span class="tick">✓</span><div><strong>Pin-copy formula</strong> — title, description and CTA.</div></div>
             <div class="check"><span class="tick">✓</span><div><strong>10-Pin planner</strong> — turn research into an actual publishing batch.</div></div>
           </div>
-          <a class="btn buy-link" href="#buy">Get Instant Access — $9 →</a>
+          <a class="btn buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">Get Instant Access — $9 →</a>
         </div>
       </div>
     </section>
@@ -421,7 +421,7 @@
               <li>Pin-copy formula</li>
               <li>10-Pin planner</li>
             </ul>
-            <a class="btn buy-link" href="#buy">Get the Quick Start →</a>
+            <a class="btn buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">Get the Quick Start →</a>
           </div>
           <div class="compare-card">
             <div class="eyebrow">Pinterest Profit Blueprint</div>
@@ -478,7 +478,7 @@
           <div class="price">$9</div>
           <div class="price-note" style="text-align:left">one-time payment<br>instant digital download</div>
         </div>
-        <a class="btn buy-link" href="#">Get Pinterest Quick Start — $9 →</a>
+        <a class="btn buy-link" href="https://buy.stripe.com/aFa9AS39ebypfGUayLdwc06">Get Pinterest Quick Start — $9 →</a>
         <div class="micro">Interactive 8-page PDF · instant access</div>
       </div>
     </section>
@@ -489,27 +489,6 @@
       © 2026 Pinterest Profit Girl · Digital product · Results depend on your offer, market and execution.
     </div>
   </footer>
-
-  <script>
-    /*
-      PASTE THE STRIPE PAYMENT LINK FOR PINTEREST QUICK START BELOW.
-      Example: const QUICK_START_CHECKOUT_URL = "https://buy.stripe.com/...";
-    */
-    const QUICK_START_CHECKOUT_URL = window.PQS_CONFIG?.PAYMENT_LINK_URL || "";
-
-    document.querySelectorAll(".buy-link").forEach(link => {
-      link.addEventListener("click", function(e) {
-        if (!QUICK_START_CHECKOUT_URL) {
-          e.preventDefault();
-          document.getElementById("buy").scrollIntoView({behavior:"smooth"});
-          console.warn("Add your Pinterest Quick Start Stripe Payment Link to QUICK_START_CHECKOUT_URL.");
-          return;
-        }
-        e.preventDefault();
-        window.location.href = QUICK_START_CHECKOUT_URL;
-      });
-    });
-  </script>
 <script src="config.js"></script>
 </body>
 </html>
